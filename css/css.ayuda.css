@@ -1,0 +1,44 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif; /* Establece la fuente para todo el cuerpo */
+    background-color: #f4f4f4; /* Fondo claro para la página */
+    margin: 0; /* Elimina márgenes por defecto */
+    padding: 0; /* Elimina relleno por defecto */
+}
+
+/* Estilos para el encabezado */
+header {
+    background-color: #0073e6; /* Un color azul profesional para el encabezado */
+    color: white; /* El texto del encabezado será blanco */
+    text-align: center; /* Centra el texto */
+    padding: 10px 0; /* Espaciado en la parte superior e inferior del encabezado */
+}
+
+/* Estilos para el contenido principal */
+main {
+    padding: 20px; /* Espaciado alrededor del contenido principal */
+    text-align: center; /* Centra el texto */
+}
+
+/* Estilos para los enlaces */
+a {
+    color: #0073e6; /* Color azul del enlace */
+    font-size: 18px; /* Tamaño de fuente para el enlace */
+    text-decoration: none; /* Elimina el subrayado predeterminado */
+    font-weight: bold; /* Hace el enlace más destacado */
+}
+
+a:hover {
+    text-decoration: underline; /* Subraya el enlace al pasar el mouse sobre él */
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #333; /* Un fondo oscuro para el pie de página */
+    color: white; /* El texto será blanco */
+    text-align: center; /* Centra el texto */
+    padding: 10px 0; /* Espaciado en la parte superior e inferior del pie */
+    position: fixed; /* Fija el pie de página al fondo */
+    width: 100%; /* Asegura que el pie de página ocupe todo el ancho */
+    bottom: 0; /* Lo coloca en la parte inferior de la página */
+}

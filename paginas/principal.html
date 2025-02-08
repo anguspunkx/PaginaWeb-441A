@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Store</title>
+    <link rel="stylesheet" href="styles.css"> <!-- carga los estilos del main styles.css -->
+</head>
+
+<body>
+    <!-- Encabezado de la tienda virtual -->
+    <header>
+        <div class="header-container">
+            <h1>Virtual Store</h1>
+            <!-- Barra de búsqueda -->
+            <input type="text" placeholder="Search for products..." class="search-bar">
+            <!-- Botones de usuario -->
+            <div class="user-options">
+                <button class="account-btn">Hazte una cuenta</button>
+                <button class="login-btn">Iniciar sesión</button>
+                <a href="file:///E:/PROYECTO%20DROPSHIP/ayuda.html">AYUDA</a>
+            </div>
+        </div>
+        <!-- Filtros de productos -->
+        <div class="filters">
+            <button class="filter-btn" data-filter="latest">Latest</button>
+            <button class="filter-btn" data-filter="trending">Trending</button>
+            <button class="filter-btn" data-filter="price">Price</button>
+            <button class="filter-btn" data-filter="shipping">US Shipping</button>
+        </div>
+    </header>
+
+    <!-- Contenedor principal -->
+    <div class="main-container">
+        <!-- Barra lateral con categorías -->
+        <aside class="sidebar">
+            <h2>Categories</h2>
+            <ul>
+                <li><button class="category-btn" data-category="electronics">Electronics</button></li>
+                <li><button class="category-btn" data-category="fashion">Fashion</button></li>
+                <li><button class="category-btn" data-category="home">Home</button></li>
+                <li><button class="category-btn" data-category="sports">Sports</button></li>
+                <li><button class="category-btn" data-category="books">Books</button></li>
+            </ul>
+        </aside>
+
+        <!-- Sección de productos -->
+        <section class="content">
+            <div id="products-container">
+                <p>Select a category to view products.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Pie de página con información de contacto y enlaces útiles -->
+    <footer>
+        <div class="footer-container">
+            <p>Contact us at:</p>
+            <p>Email: contact@virtualstore.com</p>
+            <p>Phone: +123 456 7890</p>
+            <!-- Sección con enlaces de ayuda y términos -->
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>AYUDA</h3>
+                    <a href="#">Preguntas frecuentes</a>
+                    <a href="#">Contactar con atención al cliente</a>
+                </div>
+                <div class="footer-column">
+                    <h3>TÉRMINOS</h3>
+                    <a href="#">Privacidad y Cookies</a>
+                    <a href="#">Términos y Condiciones</a>
+                </div>
+                <div class="footer-column">
+                    <h3>INFORMACIÓN</h3>
+                    <a href="#">Sobre nosotros</a>
+                    <a href="#">Equipo de trabajo</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Archivo JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>
