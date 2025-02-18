@@ -1,34 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Metaetiquetas para definir el carácter y la vista -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Título de la página, se muestra en la pestaña del navegador-->
-    <title>CREA TU CUENTA ! BIENVENIDO</title>
-
-    <!-- Vincula el archivo CSS externo -->
-    <link rel="stylesheet" href="css.ayuda.css">
+    <title>Formulario de Registro</title>
+    <link rel="stylesheet" href="creatucuenta.css">
 </head>
-
 <body>
-
-    <!-- Encabezado de la página con un título -->
-    <header>
-        <h1>Bienvenido a la Página de Ayuda</h1>
-    </header>
-
-    <!-- Contenido principal con un enlace a la página de ayuda -->
-    <main>
-        <p>Si necesitas ayuda, haz clic en el siguiente enlace para ir a la página de ayuda:</p>
-        <a href="https://www.ejemplo.com/ayuda" target="_blank">Ir a la Página de Ayuda</a>
-    </main>
-
-    <!-- Pie de página -->
-    <footer>
-        <p>&copy; 2025 Todos los derechos reservados.</p>
-    </footer>
-
+    <div class="container">
+        <form id="registroForm">
+            <h2>Registro de Usuario</h2>
+            
+            <!-- Campo: Nombre -->
+            <label for="nombre">Nombre Completo</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <small class="error" id="errorNombre"></small>
+            
+            <!-- Campo: Dirección -->
+            <label for="direccion">Dirección</label>
+            <input type="text" id="direccion" name="direccion" required>
+            <small class="error" id="errorDireccion"></small>
+            
+            <!-- Campo: Fecha de nacimiento -->
+            <label for="fechaNacimiento">Fecha de Nacimiento</label>
+            <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
+            <small class="error" id="errorFecha"></small>
+            
+            <!-- Campo: Departamento -->
+            <label for="departamento">Departamento</label>
+            <select id="departamento" name="departamento" required>
+                <option value="">Seleccione...</option>
+                <option value="Antioquia">Antioquia</option>
+                <option value="Cundinamarca">Cundinamarca</option>
+                <option value="Valle del Cauca">Valle del Cauca</option>
+            </select>
+            <small class="error" id="errorDepartamento"></small>
+            
+            <!-- Campo: Cédula o Documento de Identidad -->
+            <label for="documento">Cédula o Documento de Identidad</label>
+            <input type="text" id="documento" name="documento" required>
+            <small class="error" id="errorDocumento"></small>
+            
+            <!-- Campo: Correo Electrónico -->
+            <label for="correo">Correo Electrónico</label>
+            <input type="email" id="correo" name="correo" required>
+            <small class="error" id="errorCorreo"></small>
+            
+            <!-- Campo: Contraseña -->
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" required>
+            <small class="error" id="errorPassword"></small>
+            
+            <button type="submit">Registrarse</button>
+        </form>
+    </div>
+    
+    <script src="creatucuenta.js"></script>
 </body>
 </html>
