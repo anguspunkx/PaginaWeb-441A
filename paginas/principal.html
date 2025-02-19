@@ -1,85 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Store</title>
-    <link rel="stylesheet" href="styles.css"> <!-- carga los estilos del main styles.css -->
+    <title>Tienda Virtual</title>
+    <link rel="stylesheet" href="E:\OneDrive - Institución Universitaria Antonio Jose Camacho\UNICAMACHO ANDRES\4. SEMESTRE 4 ANDRES\2.FUNDAMENTOS WEB\PaginaWeb-441A/css/styles.css"> <!-- Enlace al archivo CSS -->
 </head>
 
 <body>
-    <!-- Encabezado de la tienda virtual -->
+
+    <!-- 📌 Encabezado con logo, búsqueda y botones de usuario -->
     <header>
-        <div class="header-container">
-            <h1>Virtual Store</h1>
-            <!-- Barra de búsqueda -->
-            <input type="text" placeholder="Search for products..." class="search-bar">
-            <!-- Botones de usuario -->
-            <div class="user-options">
-                <button class="account-btn">Hazte una cuenta</button>
-                <button class="login-btn">Iniciar sesión</button>
-                <a href="file:///E:/PROYECTO%20DROPSHIP/ayuda.html">AYUDA</a>
+        <div class="contenedor-header">
+            <h1>Tienda Virtual</h1>
+
+            <!-- 🔍 Barra de búsqueda -->
+            <input type="text" id="barra-busqueda" placeholder="Buscar productos...">
+
+            <!-- ⚙ Opciones de usuario -->
+            <div class="opciones-usuario">
+                <a href="E:\OneDrive - Institución Universitaria Antonio Jose Camacho\UNICAMACHO ANDRES\4. SEMESTRE 4 ANDRES\2.FUNDAMENTOS WEB\PaginaWeb-441A\paginas\creatucuenta.html"><button class="btn-usuario">Crear cuenta</button></a>
+                <a href="E:\OneDrive - Institución Universitaria Antonio Jose Camacho\UNICAMACHO ANDRES\4. SEMESTRE 4 ANDRES\2.FUNDAMENTOS WEB\PaginaWeb-441A\paginas\iniciar_sesion.html"><button class="btn-usuario">Iniciar sesión</button></a>
+                <a href="E:\OneDrive - Institución Universitaria Antonio Jose Camacho\UNICAMACHO ANDRES\4. SEMESTRE 4 ANDRES\2.FUNDAMENTOS WEB\PaginaWeb-441A\paginas\ayuda.html"><button class="btn-usuario">Ayuda</button></a>
             </div>
-        </div>
-        <!-- Filtros de productos -->
-        <div class="filters">
-            <button class="filter-btn" data-filter="latest">Latest</button>
-            <button class="filter-btn" data-filter="trending">Trending</button>
-            <button class="filter-btn" data-filter="price">Price</button>
-            <button class="filter-btn" data-filter="shipping">US Shipping</button>
+
+            <!-- 🛒 Botón del carrito -->
+            <button class="btn-carrito">🛒 Carrito (<span id="contador-carrito">0</span>)</button>
         </div>
     </header>
 
-    <!-- Contenedor principal -->
-    <div class="main-container">
-        <!-- Barra lateral con categorías -->
-        <aside class="sidebar">
-            <h2>Categories</h2>
+    <div class="contenedor-principal">
+        <!-- 📌 Menú lateral con categorías -->
+        <aside class="barra-lateral">
+            <h2>Categorías</h2>
             <ul>
-                <li><button class="category-btn" data-category="electronics">Electronics</button></li>
-                <li><button class="category-btn" data-category="fashion">Fashion</button></li>
-                <li><button class="category-btn" data-category="home">Home</button></li>
-                <li><button class="category-btn" data-category="sports">Sports</button></li>
-                <li><button class="category-btn" data-category="books">Books</button></li>
+                <li><button class="btn-categoria" data-categoria="electronicos">Electrónicos</button></li>
+                <li><button class="btn-categoria" data-categoria="moda">Moda</button></li>
+                <li><button class="btn-categoria" data-categoria="hogar">Hogar</button></li>
+                <li><button class="btn-categoria" data-categoria="deportes">Deportes</button></li>
+                <li><button class="btn-categoria" data-categoria="libros">Libros</button></li>
             </ul>
         </aside>
 
-        <!-- Sección de productos -->
-        <section class="content">
-            <div id="products-container">
-                <p>Select a category to view products.</p>
+        <!-- 📌 Contenedor de productos -->
+        <section class="contenido">
+            <div id="contenedor-productos">
+                <p>Selecciona una categoría para ver los productos.</p>
             </div>
         </section>
     </div>
 
-    <!-- Pie de página con información de contacto y enlaces útiles -->
+    <!-- 📌 Carrito de compras (oculto por defecto) -->
+    <div id="contenedor-carrito" class="carrito">
+        <h2>Carrito de Compras</h2>
+        <ul id="lista-carrito"></ul>
+        <p>Total: <span id="total-productos">0</span> productos</p>
+        <button id="vaciar-carrito">Vaciar Carrito</button>
+    </div>
+
+    <!-- 📌 Pie de página con información de contacto -->
     <footer>
-        <div class="footer-container">
-            <p>Contact us at:</p>
-            <p>Email: contact@virtualstore.com</p>
-            <p>Phone: +123 456 7890</p>
-            <!-- Sección con enlaces de ayuda y términos -->
-            <div class="footer-columns">
-                <div class="footer-column">
-                    <h3>AYUDA</h3>
-                    <a href="#">Preguntas frecuentes</a>
-                    <a href="#">Contactar con atención al cliente</a>
-                </div>
-                <div class="footer-column">
-                    <h3>TÉRMINOS</h3>
-                    <a href="#">Privacidad y Cookies</a>
-                    <a href="#">Términos y Condiciones</a>
-                </div>
-                <div class="footer-column">
-                    <h3>INFORMACIÓN</h3>
-                    <a href="#">Sobre nosotros</a>
-                    <a href="#">Equipo de trabajo</a>
-                </div>
-            </div>
+        <div class="contenedor-footer">
+            <p>Contacto: contact@tiendavirtual.com</p>
+            <p>Teléfono: +123 456 7890</p>
         </div>
     </footer>
 
-    <!-- Archivo JavaScript externo -->
-    <script src="script.js"></script>
+    <!-- 📌 Enlace al archivo JavaScript -->
+    <script src="E:\OneDrive - Institución Universitaria Antonio Jose Camacho\UNICAMACHO ANDRES\4. SEMESTRE 4 ANDRES\2.FUNDAMENTOS WEB\PaginaWeb-441A\js\script.js"></script>
 </body>
+
 </html>

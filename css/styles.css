@@ -1,179 +1,163 @@
-/* Reset de estilos generales para mantener consistencia */
-* {
+/* ====================
+   🔹 RESET Y BASE 🔹
+   ==================== */
+   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Configuración de tipografía y colores base */
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
     background-color: #f9f9f9;
     color: #333;
+    line-height: 1.6;
 }
 
-/* ===== Estilos del encabezado ===== */
+/* =============================
+   🔹 ENCABEZADO (HEADER) 🔹
+   ============================= */
 header {
     background-color: #0077b6;
-    color: #fff;
-    padding: 15px 20px;
+    color: white;
+    padding: 15px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    justify-content: center;
 }
 
-/* Contenedor del título, búsqueda y botones de usuario */
-.header-container {
+.contenedor-header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
     max-width: 1200px;
 }
 
-/* Estilo del título principal */
-h1 {
-    font-size: 24px;
-}
-
-/* Barra de búsqueda con animación de foco */
-.search-bar {
+/* 🔍 Barra de búsqueda */
+#barra-busqueda {
     padding: 8px;
     border: none;
     border-radius: 5px;
     width: 300px;
-    max-width: 100%;
     transition: box-shadow 0.3s;
 }
-.search-bar:focus {
+#barra-busqueda:focus {
     box-shadow: 0 0 8px rgba(0, 119, 182, 0.6);
     outline: none;
 }
 
-/* Botones de usuario */
-.user-options {
+/* ⚙ Botones de usuario */
+.opciones-usuario {
     display: flex;
     gap: 10px;
 }
-.user-options button {
+.btn-usuario {
     padding: 8px 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #fff;
+    background-color: white;
     color: #0077b6;
     font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background 0.3s, color 0.3s;
 }
-.user-options button:hover {
+.btn-usuario:hover {
     background-color: #005f8a;
-    color: #fff;
+    color: white;
 }
 
-/* ===== Filtros de productos ===== */
-.filters {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
-.filter-btn {
+/* 🛒 Botón del carrito */
+.btn-carrito {
     padding: 8px 16px;
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background-color: #ffcc00;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    font-weight: bold;
+    transition: background 0.3s;
 }
-.filter-btn:hover {
-    background-color: #ddd;
-    transform: scale(1.05);
+.btn-carrito:hover {
+    background-color: #e6b800;
 }
 
-/* ===== Contenedor principal ===== */
-.main-container {
+/* ====================================
+   🔹 BARRA LATERAL (CATEGORÍAS) 🔹
+   ==================================== */
+.barra-lateral {
+    width: 250px;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.barra-lateral h2 {
+    margin-bottom: 15px;
+}
+.barra-lateral ul {
+    list-style: none;
+}
+.barra-lateral li {
+    margin-bottom: 10px;
+}
+.btn-categoria {
+    width: 100%;
+    padding: 10px;
+    background: #f1f1f1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.btn-categoria:hover {
+    background: #ddd;
+}
+
+/* =============================
+   🔹 CONTENEDOR DE PRODUCTOS 🔹
+   ============================= */
+.contenedor-principal {
     display: flex;
     margin: 20px;
     gap: 20px;
 }
-
-/* ===== Barra lateral ===== */
-aside.sidebar {
-    width: 250px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.sidebar h2 {
-    margin-bottom: 15px;
-}
-.sidebar ul {
-    list-style: none;
-}
-.sidebar li {
-    margin-bottom: 10px;
-}
-.category-btn {
-    padding: 10px;
-    width: 100%;
-    background-color: #f1f1f1;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: left;
-    transition: background-color 0.3s;
-}
-.category-btn:hover {
-    background-color: #ddd;
-}
-
-/* ===== Sección de contenido ===== */
-.content {
+.contenido {
     flex: 1;
-    background-color: #fff;
+    background: white;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-#products-container {
+#contenedor-productos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
 }
 
-/* ===== Pie de página ===== */
-footer {
-    background-color: #0077b6;
-    color: #fff;
+/* ===========================
+   🔹 CARRITO DE COMPRAS 🔹
+   =========================== */
+.carrito {
+    position: fixed;
+    right: -300px;
+    top: 0;
+    width: 300px;
+    background: white;
     padding: 20px;
-    text-align: center;
-    margin-top: 20px;
+    height: 100vh;
+    transition: right 0.3s;
+    box-shadow: -3px 0 5px rgba(0, 0, 0, 0.1);
 }
-footer p {
-    margin-bottom: 5px;
+.carrito.mostrar {
+    right: 0;
 }
 
-/* Secciones del footer */
-.footer-columns {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 15px;
-}
-.footer-column {
-    text-align: left;
-}
-.footer-column h3 {
-    margin-bottom: 10px;
-}
-.footer-column a {
-    display: block;
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-.footer-column a:hover {
-    color: #a8dadc;
+/* ========================
+   🔹 PIE DE PÁGINA 🔹
+   ======================== */
+footer {
+    background: #0077b6;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
 }

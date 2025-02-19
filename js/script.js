@@ -1,78 +1,91 @@
-// Seleccionamos elementos del DOM para interactuar con ellos
-const categoryButtons = document.querySelectorAll('.category-btn'); // Botones de las categorías
-const productsContainer = document.getElementById('products-container'); // Contenedor de productos
+// 📌 Espera a que el contenido de la página esté completamente cargado antes de ejecutar el código.
+document.addEventListener("DOMContentLoaded", function () {
 
-// Datos simulados de productos por categoría
-const products = {
-    electronics: [
-        { name: 'Smartphone', price: 599, image: 'https://via.placeholder.com/150' },
-        { name: 'Laptop', price: 999, image: 'https://via.placeholder.com/150' },
-        { name: 'Headphones', price: 199, image: 'https://via.placeholder.com/150' }
-    ],
-    fashion: [
-        { name: 'T-shirt', price: 29, image: 'https://via.placeholder.com/150' },
-        { name: 'Jeans', price: 49, image: 'https://via.placeholder.com/150' },
-        { name: 'Sneakers', price: 89, image: 'https://via.placeholder.com/150' }
-    ],
-    home: [
-        { name: 'Sofa', price: 399, image: 'https://via.placeholder.com/150' },
-        { name: 'Lamp', price: 59, image: 'https://via.placeholder.com/150' },
-        { name: 'Rug', price: 99, image: 'https://via.placeholder.com/150' }
-    ],
-    sports: [
-        { name: 'Basketball', price: 29, image: 'https://via.placeholder.com/150' },
-        { name: 'Tennis Racket', price: 89, image: 'https://via.placeholder.com/150' },
-        { name: 'Soccer Ball', price: 39, image: 'https://via.placeholder.com/150' }
-    ],
-    books: [
-        { name: 'Novel', price: 19, image: 'https://via.placeholder.com/150' },
-        { name: 'Science Book', price: 49, image: 'https://via.placeholder.com/150' },
-        { name: 'History Book', price: 39, image: 'https://via.placeholder.com/150' }
-    ]
-};
+    // 📌 Referencias a elementos del DOM (Document Object Model)
+    const contenedorProductos = document.getElementById("contenedor-productos"); // Sección donde se mostrarán los productos
+    const botonesCategoria = document.querySelectorAll(".btn-categoria"); // Botones de categorías
+    const contenedorCarrito = document.getElementById("contenedor-carrito"); // Contenedor del carrito
+    const listaCarrito = document.getElementById("lista-carrito"); // Lista de productos en el carrito
+    const contadorCarrito = document.getElementById("contador-carrito"); // Contador de productos en el carrito
+    const totalProductos = document.getElementById("total-productos"); // Total de productos en el carrito
+    const botonVaciarCarrito = document.getElementById("vaciar-carrito"); // Botón para vaciar el carrito
+    const botonCarrito = document.querySelector(".btn-carrito"); // Botón que abre el carrito
 
-// Función para mostrar productos de una categoría seleccionada
-function displayProducts(category) {
-    // Limpiamos el contenedor de productos antes de mostrar los nuevos
-    productsContainer.innerHTML = '';
+    // 📌 Variable que almacena los productos agregados al carrito
+    let carrito = [];
 
-    // Si no hay productos en la categoría seleccionada, mostramos un mensaje
-    if (!products[category] || products[category].length === 0) {
-        productsContainer.innerHTML = '<p>No products available in this category.</p>';
-        return;
+    // 📌 Datos de productos simulados por categoría
+    const productos = {
+        electronicos: ["Laptop", "Smartphone", "Auriculares", "Smartwatch"],
+        moda: ["Camiseta", "Pantalón", "Zapatos", "Gorra"],
+        hogar: ["Cafetera", "Lámpara", "Almohada", "Espejo"],
+        deportes: ["Balón", "Raqueta", "Pesas", "Bicicleta"],
+        libros: ["Libro de Ciencia", "Novela", "Manga", "Enciclopedia"]
+    };
+
+    // 📌 Función para mostrar productos según la categoría seleccionada
+    function mostrarProductos(categoria) {
+        const productosSeleccionados = productos[categoria] || [];
+
+        // 📌 Se genera la lista de productos en formato HTML
+        contenedorProductos.innerHTML = productosSeleccionados.length
+            ? productosSeleccionados.map(producto => `<button class="btn-producto" data-nombre="${producto}">${producto} ➕</button>`).join('')
+            : "<p>No hay productos en esta categoría.</p>";
+
+        // 📌 Se añaden eventos a cada botón de producto
+        document.querySelectorAll(".btn-producto").forEach(boton => {
+            boton.addEventListener("click", function () {
+                agregarAlCarrito(this.getAttribute("data-nombre"));
+            });
+        });
     }
 
-    // Iteramos sobre los productos de la categoría seleccionada y los agregamos al DOM
-    products[category].forEach(product => {
-        // Creamos un contenedor para cada producto
-        const productCard = document.createElement('div');
-        productCard.classList.add('product-card');
+    // 📌 Función para agregar un producto al carrito
+    function agregarAlCarrito(nombreProducto) {
+        carrito.push(nombreProducto);
+        actualizarCarrito();
+    }
 
-        // Agregamos la imagen del producto
-        const productImage = document.createElement('img');
-        productImage.src = product.image;
-        productImage.alt = product.name;
-        productCard.appendChild(productImage);
+    // 📌 Función para actualizar la interfaz del carrito
+    function actualizarCarrito() {
+        // 📌 Se genera la lista de productos en el carrito con botón para eliminarlos
+        listaCarrito.innerHTML = carrito.map((item, index) => 
+            `<li>${item} <button class="btn-eliminar" data-indice="${index}">❌</button></li>`).join('');
 
-        // Agregamos el nombre del producto
-        const productName = document.createElement('h3');
-        productName.textContent = product.name;
-        productCard.appendChild(productName);
+        // 📌 Se actualiza la cantidad de productos en el carrito
+        contadorCarrito.textContent = carrito.length;
+        totalProductos.textContent = carrito.length;
 
-        // Agregamos el precio del producto
-        const productPrice = document.createElement('p');
-        productPrice.textContent = `$${product.price}`;
-        productCard.appendChild(productPrice);
+        // 📌 Se añaden eventos a los botones de eliminación
+        document.querySelectorAll(".btn-eliminar").forEach(boton => {
+            boton.addEventListener("click", function () {
+                eliminarDelCarrito(this.getAttribute("data-indice"));
+            });
+        });
+    }
 
-        // Agregamos el producto al contenedor de productos
-        productsContainer.appendChild(productCard);
+    // 📌 Función para eliminar un producto del carrito
+    function eliminarDelCarrito(indice) {
+        carrito.splice(indice, 1); // Se elimina el producto según su índice
+        actualizarCarrito(); // Se actualiza la vista del carrito
+    }
+
+    // 📌 Función para vaciar todo el carrito
+    botonVaciarCarrito.addEventListener("click", function () {
+        carrito = []; // Se vacía el array del carrito
+        actualizarCarrito(); // Se actualiza la vista
     });
-}
 
-// Agregamos un evento a cada botón de categoría para que cargue los productos correspondientes
-categoryButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const category = button.getAttribute('data-category'); // Obtenemos la categoría del botón
-        displayProducts(category); // Mostramos los productos de la categoría seleccionada
+    // 📌 Mostrar u ocultar el carrito al hacer clic en el botón
+    botonCarrito.addEventListener("click", function () {
+        contenedorCarrito.classList.toggle("mostrar");
     });
+
+    // 📌 Evento para cambiar de categoría y mostrar productos correspondientes
+    botonesCategoria.forEach(boton => {
+        boton.addEventListener("click", function () {
+            mostrarProductos(this.getAttribute("data-categoria"));
+        });
+    });
+
 });
