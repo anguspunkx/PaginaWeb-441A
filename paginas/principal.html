@@ -4,71 +4,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda Virtual</title>
-    <link rel="stylesheet" href="E:\OneDrive - Institución Universitaria Antonio Jose Camacho\UNICAMACHO ANDRES\4. SEMESTRE 4 ANDRES\2.FUNDAMENTOS WEB\PaginaWeb-441A/css/styles.css"> <!-- Enlace al archivo CSS -->
+    <title>Tienda Tech - Innovación y Desarrollo</title>
+    <link rel="stylesheet" href="E:\OneDrive - Institución Universitaria Antonio Jose Camacho\UNICAMACHO ANDRES\4. SEMESTRE 4 ANDRES\2.FUNDAMENTOS WEB\PaginaWeb-441A\css\styles.css">
 </head>
 
 <body>
-
-    <!-- 📌 Encabezado con logo, búsqueda y botones de usuario -->
     <header>
         <div class="contenedor-header">
-            <h1>Tienda Virtual</h1>
-
-            <!-- 🔍 Barra de búsqueda -->
-            <input type="text" id="barra-busqueda" placeholder="Buscar productos...">
-
-            <!-- ⚙ Opciones de usuario -->
-            <div class="opciones-usuario">
-                <a href="E:\OneDrive - Institución Universitaria Antonio Jose Camacho\UNICAMACHO ANDRES\4. SEMESTRE 4 ANDRES\2.FUNDAMENTOS WEB\PaginaWeb-441A\paginas\creatucuenta.html"><button class="btn-usuario">Crear cuenta</button></a>
-                <a href="E:\OneDrive - Institución Universitaria Antonio Jose Camacho\UNICAMACHO ANDRES\4. SEMESTRE 4 ANDRES\2.FUNDAMENTOS WEB\PaginaWeb-441A\paginas\iniciar_sesion.html"><button class="btn-usuario">Iniciar sesión</button></a>
-                <a href="E:\OneDrive - Institución Universitaria Antonio Jose Camacho\UNICAMACHO ANDRES\4. SEMESTRE 4 ANDRES\2.FUNDAMENTOS WEB\PaginaWeb-441A\paginas\ayuda.html"><button class="btn-usuario">Ayuda</button></a>
+            <h1>G.C TECH</h1>
+            <nav>
+                <ul class="menu">
+                    <li><a href="#">Inicio</a></li>
+                    <li class="submenu">
+                        <a href="#">Servicios</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Diseño Web</a></li>
+                            <li><a href="#">Desarrollo de Software</a></li>
+                            <li><a href="#">Consultoría en TI</a></li>
+                        </ul>
+                    </li>
+                    <li class="submenu">
+                        <a href="#">Productos</a>
+                        <ul class="dropdown">
+                            <li><a href="#">Accesorios</a></li>
+                            <li><a href="#">Laptops</a></li>
+                            <li><a href="#">Cables y Adaptadores</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="botones-header">
+                <button class="btn">Iniciar Sesión</button>
+                <button class="btn">Crear Cuenta</button>
+                <button class="btn">Ayuda</button>
             </div>
-
-            <!-- 🛒 Botón del carrito -->
-            <button class="btn-carrito">🛒 Carrito (<span id="contador-carrito">0</span>)</button>
         </div>
     </header>
 
-    <div class="contenedor-principal">
-        <!-- 📌 Menú lateral con categorías -->
-        <aside class="barra-lateral">
-            <h2>Categorías</h2>
-            <ul>
-                <li><button class="btn-categoria" data-categoria="electronicos">Electrónicos</button></li>
-                <li><button class="btn-categoria" data-categoria="moda">Moda</button></li>
-                <li><button class="btn-categoria" data-categoria="hogar">Hogar</button></li>
-                <li><button class="btn-categoria" data-categoria="deportes">Deportes</button></li>
-                <li><button class="btn-categoria" data-categoria="libros">Libros</button></li>
-            </ul>
-        </aside>
+    <main>
+        <section class="banner">
+            <h2>Bienvenido a Tienda Tech</h2>           
+            <div class="imagen"><img src="https://cdn.pixabay.com/photo/2024/02/16/12/36/business-8577512_640.jpg" alt="Banner"></div>
+                <div class="texto">
+                    <h2>La tecnología que necesitas</h2>
+                    <h1>Descubre nuestra amplia gama de productos y servicios para satisfacer tus necesidades tecnológicas.</1>
+            
+        </section>
 
-        <!-- 📌 Contenedor de productos -->
-        <section class="contenido">
-            <div id="contenedor-productos">
-                <p>Selecciona una categoría para ver los productos.</p>
+        <section>
+
+            <h1>NOTICIAS DE INTERES</h1>
+            
+            <div style="display: flex; gap: 20px;">
+                <div style="width: 25%;">
+                    <img src="https://images.pexels.com/photos/7567591/pexels-photo-7567591.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Persona con laptop" style="width: 100%;">
+                    <h3>Manténgase más seguro con SmartScreen</h3>
+                    <p>SmartScreen de Microsoft Defender ayuda a proteger su seguridad frente a sitios y software de suplantación de identidad y malware.</p>
+                    <a href="#">Más información sobre SmartScreen ></a>
+                </div>
+                <div style="width: 25%;">
+                    <img src="" alt="Personas en café" style="width: 100%;">
+                    <h3>Organice sus ideas</h3>
+                    <p>Las colecciones le ayudan a realizar un seguimiento de sus ideas en la Web: comprar, planear un viaje, investigar o continuar donde lo dejó.</p>
+                    <a href="#">Use colecciones en Edge ></a>
+                </div>
+                <div style="width: 25%;">
+                    <img src="https://images.pexels.com/photos/110469/pexels-photo-110469.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Persona en sillón" style="width: 100%;">
+                    <h3>Eliminar las cookies</h3>
+                    <p>Microsoft Edge facilita el control de qué cookies del explorador se almacenan en el dispositivo.</p>
+                    <a href="#">Administre, vea y use cookies ></a>
+                </div>
+                <div style="width: 25%;">
+                    <img src="https://media.istockphoto.com/id/1357968012/es/foto/hombre-de-negocios-creativo-que-trabaja-en-un-espacio-de-coworking.jpg?b=1&s=612x612&w=0&k=20&c=X9CuPI6S2vut4gsbSezLQUpfGcTfyp3V8sGTQQzwlU8=" alt="Ilustración de impresión" style="width: 100%;">
+                    <h3>Imprimir en Microsoft Edge</h3>
+                    <p>Sabemos que puede haber ocasiones en las que necesite imprimir algo de la web y Microsoft Edge puede ayudarle.</p>
+                    <a href="#">Imprima páginas web desde Edge ></a>
+                </div>
             </div>
         </section>
-    </div>
+        
+        <section class="productos">
+            <h2>Nuestros Productos</h2>
+            <div class="grid-productos">
+                <article class="producto">
+                    <img src="https://cdn.pixabay.com/photo/2017/09/25/18/09/computer-2786081_640.jpg" alt="Cable USB">
+                    <h3>Cable USB-C</h3>
+                    <p>$9.99</p>
+                    <button class="btn">Agregar al carrito</button>
+                </article>
+                <article class="producto">
+                    <img src="https://cdn.pixabay.com/photo/2020/07/18/17/51/mouse-5417888_640.jpg" alt="Mouse inalámbrico">
+                    <h3>Mouse Inalámbrico</h3>
+                    <p>$19.99</p>
+                    <button class="btn">Agregar al carrito</button>
+                </article>
+                <article class="producto">
+                    <img src="https://cdn.pixabay.com/photo/2018/09/17/14/27/headphones-3683983_1280.jpg" alt="Auriculares Bluetooth">
+                    <h3>Auriculares Bluetooth</h3>
+                    <p>$29.99</p>
+                    <button class="btn">Agregar al carrito</button>
+                </article>
+                <article class="producto">
+                    <img src="https://cdn.pixabay.com/photo/2016/03/27/07/21/lights-1282268_640.jpg" alt="Teclado mecánico">
+                    <h3>Teclado Mecánico RGB</h3>
+                    <p>$59.99</p>
+                    <button class="btn">Agregar al carrito</button>
+                </article>
+                <article class="producto">
+                    <img src="https://cdn.pixabay.com/photo/2021/06/13/08/15/laptop-6332546_640.jpg" alt="Laptop">
+                    <h3>Laptop Ultra Rápida</h3>
+                    <p>$799.99</p>
+                    <button class="btn">Agregar al carrito</button>
+                </article>
+                <article class="producto">
+                    <img src="https://cdn.pixabay.com/photo/2017/04/04/17/17/hdmi-2202226_640.jpg" alt="Adaptador HDMI">
+                    <h3>Adaptador HDMI a USB-C</h3>
+                    <p>$14.99</p>
+                    <button class="btn">Agregar al carrito</button>
+                </article>
+                <article class="producto">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/29/03/42/mic-1867121_640.jpg" alt="Monitor Ultrawide">
+                    <h3>Microfonos </h3>
+                    <p>$499.99</p>
+                    <button class="btn">Agregar al carrito</button>
+                </article>
+                <article class="producto">
+                    <img src="https://cdn.pixabay.com/photo/2019/07/14/16/29/pen-4337524_640.jpg" alt="Teclado Mecánico">
+                    <h3>Tablets y pens</h3>
+                    <p>$79.99</p>
+                    <button class="btn">Agregar al carrito</button>
+                </article>
+                <article class="producto">
+                    <img src="https://cdn.pixabay.com/photo/2014/04/09/08/16/charger-319845_640.jpg" alt="Soporte para Laptop">
+                    <h3>Cargador Muliple</h3>
+                    <p>$39.99</p>
+                    <button class="btn">Agregar al carrito</button>
+                </article>
+                <article class="producto">
+                    <img src="https://cdn.pixabay.com/photo/2016/10/09/20/27/bluetooth-1726772_640.jpg" alt="Disco SSD">
+                    <h3>Bluetott </h3>
+                    <p>$199.99</p>
+                    <button class="btn">Agregar al carrito</button>
+                </article>
+            </div>
+        </section>
 
-    <!-- 📌 Carrito de compras (oculto por defecto) -->
-    <div id="contenedor-carrito" class="carrito">
-        <h2>Carrito de Compras</h2>
-        <ul id="lista-carrito"></ul>
-        <p>Total: <span id="total-productos">0</span> productos</p>
-        <button id="vaciar-carrito">Vaciar Carrito</button>
-    </div>
+        <section class="servicios">
+            <h2>Nuestros Servicios</h2>
+            <div class="grid-servicios">
+                <article class="servicio">
+                    <img src="https://cdn.pixabay.com/photo/2017/09/25/18/09/computer-2786081_640.jpg" alt="Diseño Web">
+                    <h3>Diseño Web</h3>
+                    <p>Desarrollo de sitios web modernos y atractivos, adaptados a tus necesidades y objetivos.</p>
+                </article>
+                <article class="servicio">
+                    <img src="https://cdn.pixabay.com/photo/2020/07/18/17/51/mouse-5417888_640.jpg" alt="Desarrollo de Software">
+                    <h3>Desarrollo de Software</h3>
+                    <p>Creación de aplicaciones y sistemas a la medida, con tecnologías de vanguardia y alto rendimiento.</p>
+                </article>
+                <article class="servicio">
+                    <img src="https://cdn.pixabay.com/photo/2018/09/17/14/27/headphones-3683983_1280.jpg" alt="Consultoría en TI">
+                    <h3>Consultoría en TI</h3>
+                    <p>Asesoramiento especializado en tecnologías de la información, para optimizar tus procesos y recursos.</p>
+                </article>
 
-    <!-- 📌 Pie de página con información de contacto -->
+            </div>
+
+    </main>
+
     <footer>
-        <div class="contenedor-footer">
-            <p>Contacto: contact@tiendavirtual.com</p>
-            <p>Teléfono: +123 456 7890</p>
+
+        <div class="footer-links">
+            <ul>
+                <li><a href="#">Términos y Condiciones</a></li>
+                <li><a href="#">Política de Privacidad</a></li>
+                <li><a href="#">Acerca de Nosotros</a></li>
+                <li><a href="#">Soporte</a></li>
+            </ul>
         </div>
+
+        <div class="contenedor-footer">
+            <p>Contacto: soporte@tiendatech.com | Teléfono: +123 456 7890</p>
+            <p>© 2025 Tienda Tech. Todos los derechos reservados.</p>
+        </div>
+
     </footer>
 
-    <!-- 📌 Enlace al archivo JavaScript -->
-    <script src="E:\OneDrive - Institución Universitaria Antonio Jose Camacho\UNICAMACHO ANDRES\4. SEMESTRE 4 ANDRES\2.FUNDAMENTOS WEB\PaginaWeb-441A\js\script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
